@@ -49,22 +49,6 @@ def compute(start, end, level = 0):
     return min(compute_path_length('A' + path + 'A') for path in generate_paths if path_is_valid(x0, y0, path, button_map.values()))
 
 solve_case = lambda buttons: sum(compute(p0, p1) for p0, p1 in zip('A' + buttons, buttons))
-print(sum(solve_case(line) * int(line.removesuffix('A')) for line in map(lambda line : line.strip(), sys.stdin.readlines())))
 
-def test(input, exp):
-    ans = compute(*input)
-    if (ans == exp): print(f"Case {input}: OK")
-    else : print(f"Case {input}: expected {exp}, got {ans}")
-
-test(('A', 'v', 2), 3)
-test(('v', '<', 2), 2)
-test(('<', '<', 2), 1)
-test(('<', 'A', 2), 4)
-
-test(('A', '>', 2), 2)
-test(('>', '>', 2), 1)
-test(('>', '^', 2), 3)
-test(('^', 'A', 2), 2)
-
-test(('A', '<', 1), 10)
-test(('<', 'A', 1), 8)
+if __name__ == "__main__":
+    print(sum(solve_case(line) * int(line.removesuffix('A')) for line in map(lambda line : line.strip(), sys.stdin.readlines())))

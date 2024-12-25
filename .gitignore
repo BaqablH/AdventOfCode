@@ -2,4 +2,3 @@ vcpkg/
 .vscode/
 */a.out
 __pycache__/
-day24/sol2.py

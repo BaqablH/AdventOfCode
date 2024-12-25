@@ -1,0 +1,1 @@
+No public `sol2.py` as the code was just to iterate and play around and discard many cases, not to actually solve. The solution required some manual analysis. The swaps found were: `(ndw, jcb), (z39, twr), (grm, z32), (z10, ggn)`

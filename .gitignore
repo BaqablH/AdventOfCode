@@ -1,4 +1,4 @@
 vcpkg/
 .vscode/
-*/a.out
+a.out
 __pycache__/

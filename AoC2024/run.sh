@@ -6,6 +6,9 @@ solution=$2
 input=$3
 expected_output=$4
 
+# Pad day with leading zero if it's a single digit
+day=$(printf "%02d" "$day")
+
 # Ensure that if the 3rd parameter is provided, the 2nd must not be 't'
 if [ -n "$input" ] && [ "$solution" == "t" ]; then
   echo "Error: The 3rd parameter (input) must not be provided if the 2rd parameter is 't' (running tests)."
@@ -26,6 +29,9 @@ if [ -n "$input" ]; then
     input_file="sample.txt"
   fi
 fi
+
+echo python3 "day${day}/sol${solution}.py"
+echo "day${day}/${input_file}"
 
 if [ "$solution" == "t" ]; then
   output=$(python3 "day${day}/tests.py")
